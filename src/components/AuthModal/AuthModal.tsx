@@ -13,28 +13,36 @@ export const AuthModal = () => {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Open dialog</button>
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-        <div className={styles.modalOverlay}>
-          <DialogPanel className={styles.modalPanel}>
-            <DialogTitle className={styles.modalTitle}>
+      <button className={styles.openButton} onClick={() => setIsOpen(true)}>
+        Open Auth
+      </button>
+
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className={styles.dialog}
+      >
+        <div className={styles.overlay}>
+          <DialogPanel className={styles.panel}>
+            <DialogTitle className={styles.title}>
               Authentication Required
             </DialogTitle>
-            <Description className={styles.modalDescription}>
-              Please sign in to continue
+            <Description className={styles.description}>
+              Please sign in to access premium features
             </Description>
-            <p className={styles.modalContent}>
-              This action requires authentication. Your data is secure.
+            <p className={styles.content}>
+              This action requires account verification. Your data remains
+              secure.
             </p>
-            <div className={styles.modalActions}>
+            <div className={styles.actions}>
               <button
-                className={styles.btnSecondary}
+                className={styles.cancelBtn}
                 onClick={() => setIsOpen(false)}
               >
                 Cancel
               </button>
               <button
-                className={styles.btnPrimary}
+                className={styles.confirmBtn}
                 onClick={() => setIsOpen(false)}
               >
                 Sign In
