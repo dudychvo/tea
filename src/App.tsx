@@ -1,9 +1,15 @@
+import { AuthModal } from './components/AuthModal/AuthModal';
+
 import './App.scss';
 
 function App() {
   return (
     <>
-      <button>Test</button>
+      <div className='App'>
+        <header className='header'>
+          <AuthModal />
+        </header>
+      </div>
     </>
   );
 }
