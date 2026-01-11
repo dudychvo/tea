@@ -1,0 +1,31 @@
+@use '../../variables/fonts';
+
+.wrapper {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 0;
+
+    h1 {
+      color: white;
+      font-family: fonts.$secondary;
+      font-weight: 400;
+      font-size: 2rem;
+      font-style: italic;
+      height: fit-content;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      color: white;
+
+      li {
+        font-size: 1.1rem;
+        font-family: fonts.$secondary;
+      }
+    }
+  }
+}

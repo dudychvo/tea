@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 
+import { LoginForm } from './LoginForm/LoginForm';
+
 import test1 from '../../assets/test1.jpg';
 
 import styles from './AuthModal.module.scss';
@@ -20,23 +22,29 @@ export const AuthModal = () => {
   return (
     <>
       <button className={styles.openButton} onClick={() => setIsOpen(true)}>
-        Open Auth
+        Log in
       </button>
 
       <Dialog open={isOpen} onClose={closeModal} className={styles.dialog}>
         <div
           className={`${styles.overlay} ${isAnimating ? styles.closed : ''}`}
         >
-          <DialogPanel
-            className={styles.panel}
-          >
+          <DialogPanel className={styles.panel}>
             <div className={styles.auth}>
               <div className={styles.title}>
-                <h1>Tea Welcome Back 👋</h1>
+                <h1>Hello, Tea Lover</h1>
                 <p>
-                  TeaToday is a new day. It's your day. You shape it. Sign in to
-                  start managing your projects.
+                  Continue your mindful tea ceremony. Journey with serenity
+                  awaits.
                 </p>
+              </div>
+              <LoginForm />
+              <div className={styles.divider}>
+                <span>or</span>
+              </div>
+              <div className={styles.signUpBtn}>
+                New to the tea tradition?{' '}
+                <a href='#'>Sign up</a>
               </div>
             </div>
             <div className={styles.imgSection}>

@@ -1,16 +1,14 @@
-import { AuthModal } from './components/AuthModal/AuthModal';
+import { Routes, Route } from 'react-router-dom';
+
+import { Home } from './pages/Home/Home';
 
 import './App.scss';
 
 function App() {
   return (
-    <>
-      <div className='App'>
-        <header className='header'>
-          <AuthModal />
-        </header>
-      </div>
-    </>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
   );
 }
 
