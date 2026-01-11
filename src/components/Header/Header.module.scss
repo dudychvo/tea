@@ -1,6 +1,7 @@
 @use '../../variables/fonts';
 
 .wrapper {
+  width: 100%;
   .container {
     display: flex;
     align-items: center;
@@ -27,7 +28,7 @@
         font-size: 1.1rem;
         position: relative;
         color: inherit;
-        padding-bottom: 0.1rem;
+        padding-bottom: 0.2rem;
 
         &::after {
           content: '';

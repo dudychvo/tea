@@ -1,16 +1,61 @@
+@use '../../variables/fonts';
+
 .container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 
   .slogan {
+    color: white;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    // margin-bottom: 10rem;
 
-    .firstImg {
-      height: 50px;
-      width: 50px;
+    .sloganText {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      gap: 2rem;
+      font-size: 4rem;
+
+      & > div {
+        font-family: fonts.$secondary;
+        font-style: italic;
+      }
+
+      .firstImg {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        top: -3px;
+        left: 200px;
+      }
+
+      .secondImg {
+        position: absolute;
+        width: 150px;
+        rotate: 345deg;
+        top: 112px;
+        left: 505px;
+      }
+
+      .sloganBtn {
+        span {
+          font-size: 2rem;
+          font-weight: 300;
+          font-style: none;
+          margin-top: 4rem;
+          padding-bottom: 0.3rem;
+          border-bottom: 0.75px solid #fff;
+        }
+      }
     }
   }
 }

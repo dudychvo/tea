@@ -5,11 +5,12 @@
 }
 
 .backgroundWrapper {
+  position: relative;
   background: url(../../assets/test2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  height: 100vh;
 
   &::before {
     content: '';
@@ -27,5 +28,12 @@
   > * {
     position: relative;
     z-index: 2;
+  }
+
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
