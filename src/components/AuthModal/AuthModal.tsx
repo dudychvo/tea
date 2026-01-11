@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from '@headlessui/react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+
+import test1 from '../../assets/test1.jpg';
 
 import styles from './AuthModal.module.scss';
 
@@ -24,29 +21,17 @@ export const AuthModal = () => {
       >
         <div className={styles.overlay}>
           <DialogPanel className={styles.panel}>
-            <DialogTitle className={styles.title}>
-              Authentication Required
-            </DialogTitle>
-            <Description className={styles.description}>
-              Please sign in to access premium features
-            </Description>
-            <p className={styles.content}>
-              This action requires account verification. Your data remains
-              secure.
-            </p>
-            <div className={styles.actions}>
-              <button
-                className={styles.cancelBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Cancel
-              </button>
-              <button
-                className={styles.confirmBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Sign In
-              </button>
+            <div className={styles.auth}>
+              <div className={styles.title}>
+                <h1>Tea Welcome Back 👋</h1>
+                <p>
+                  Today is a new day. It's your day. You shape it. Sign in to
+                  start managing your projects.
+                </p>
+              </div>
+            </div>
+            <div className={styles.imgSection}>
+              <img src={test1} alt='#' />
             </div>
           </DialogPanel>
         </div>
