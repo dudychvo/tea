@@ -10,10 +10,18 @@ export const Header = () => {
           <h1>Tea Ceremony</h1>
           <nav className={styles.nav}>
             <ul>
-              <li>Guide</li>
-              <li>Shop</li>
-              <li>Quiz</li>
-              <li>Cart</li>
+              <li>
+                <a href='#'>Guide</a>
+              </li>
+              <li>
+                <a href='#'>Shop</a>
+              </li>
+              <li>
+                <a href='#'>Quiz</a>
+              </li>
+              <li>
+                <a href='#'>Cart</a>
+              </li>
             </ul>
           </nav>
           <AuthModal />

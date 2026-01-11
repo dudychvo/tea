@@ -1,19 +1,46 @@
 @use '../../variables/fonts';
 
-.openButton {
-  padding: 0.75rem 0rem;
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 193px;
-  background: #08631b;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
 
-  &:hover {
-    background: #0d8828;
-    transform: translateY(-1px);
+  .avatarContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 50%;
+      align-items: center;
+    }
+
+    p {
+      width: 80px;
+      overflow: hidden;
+      font-family: fonts.$secondary;
+    }
+  }
+
+  .openButton {
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+    background: #08631b;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #0d8828;
+      transform: translateY(-1px);
+    }
   }
 }
 

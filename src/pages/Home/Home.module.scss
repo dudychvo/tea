@@ -1,20 +1,14 @@
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-  }
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.wrapper {
+.backgroundWrapper {
   background: url(../../assets/test2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   position: relative;
 
   &::before {
@@ -24,17 +18,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(25, 33, 24, 0.7); /* Exactly 10% darker */
+    background: rgba(29, 40, 28, 0.75);
+    backdrop-filter: blur(0.5px);
     z-index: 1;
-    pointer-events: none; /* Doesn't block clicks */
+    pointer-events: none;
   }
 
-  /* Page content above */
   > * {
     position: relative;
     z-index: 2;
-  }
-
-  .container {
   }
 }

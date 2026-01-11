@@ -21,9 +21,18 @@ export const AuthModal = () => {
 
   return (
     <>
-      <button className={styles.openButton} onClick={() => setIsOpen(true)}>
-        Log in
-      </button>
+      <div className={styles.user}>
+        <div className={styles.avatarContainer}>
+          <img
+            src='https://www.jordanharbinger.com/wp-content/uploads/2018/09/be-the-most-interesting.jpg'
+            alt='#'
+          />
+          <p>Guest</p>
+        </div>
+        <button className={styles.openButton} onClick={() => setIsOpen(true)}>
+          <p>Log in</p>
+        </button>
+      </div>
 
       <Dialog open={isOpen} onClose={closeModal} className={styles.dialog}>
         <div
@@ -43,8 +52,7 @@ export const AuthModal = () => {
                 <span>or</span>
               </div>
               <div className={styles.signUpBtn}>
-                New to the tea tradition?{' '}
-                <a href='#'>Sign up</a>
+                New to the tea tradition? <a href='#'>Sign up</a>
               </div>
             </div>
             <div className={styles.imgSection}>
