@@ -1,0 +1,115 @@
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+
+import styles from './SignUpForm.module.scss';
+
+const schema = Yup.object({
+  email: Yup.string()
+    .email('Valid email required')
+    .required('Email is required'),
+  password: Yup.string()
+    .min(8, 'At least 8 characters')
+    .required('Password is required'),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref('password')], 'Passwords must match')
+    .required('Please confirm your password'),
+});
+
+type FormData = Yup.InferType<typeof schema>;
+
+interface SignUpFormProps {
+  onSubmit: (arg0: FormData) => Promise<void> | void;
+  className?: string;
+}
+
+export const SignUpForm = ({ onSubmit, className = '' }: SignUpFormProps) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
+
+  return (
+    <>
+      <div className={styles.title}>
+        <h1>Hello, Tea Lover</h1>
+        <p>Continue your mindful tea ceremony. Journey with serenity awaits.</p>
+      </div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={`${styles.form} ${className}`}
+        noValidate
+      >
+        <div className={styles.fieldGroup}>
+          <label htmlFor='email' className={styles.label}>
+            Email
+          </label>
+          <div className={styles.inputContainer}>
+            <input
+              id='email'
+              type='email'
+              placeholder='Example@email.com'
+              className={styles.input}
+              disabled={isSubmitting}
+              autoComplete='email'
+              {...register('email')}
+            />
+          </div>
+          <p className={styles.error}>{errors.email?.message || '\u00A0'}</p>
+        </div>
+        <div className={styles.fieldGroup}>
+          <label htmlFor='password' className={styles.label}>
+            Password
+          </label>
+          <div className={styles.inputContainer}>
+            <input
+              id='password'
+              type='password'
+              placeholder='At least 8 characters'
+              className={styles.input}
+              disabled={isSubmitting}
+              autoComplete='new-password'
+              {...register('password')}
+            />
+          </div>
+          <p className={styles.error}>{errors.password?.message || '\u00A0'}</p>
+        </div>
+        <div className={styles.fieldGroup}>
+          <label htmlFor='confirmPassword' className={styles.label}>
+            Confirm Password
+          </label>
+          <div className={styles.inputContainer}>
+            <input
+              id='confirmPassword'
+              type='password'
+              placeholder='Confirm your password'
+              className={styles.input}
+              disabled={isSubmitting}
+              autoComplete='new-password'
+              {...register('confirmPassword')}
+            />
+          </div>
+          <p className={styles.error}>
+            {errors.confirmPassword?.message || '\u00A0'}
+          </p>
+        </div>
+        <div className={styles.forgotWrapper}>
+          <a href='#' className={styles.forgotLink}>
+            Already have an account?
+          </a>
+        </div>
+        <button
+          type='submit'
+          disabled={isSubmitting}
+          className={styles.submitBtn}
+          aria-label={isSubmitting ? 'Signing up' : 'Sign up'}
+        >
+          {isSubmitting ? 'Signing up...' : 'Sign up'}
+        </button>
+      </form>
+    </>
+  );
+};
