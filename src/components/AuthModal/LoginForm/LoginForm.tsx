@@ -30,58 +30,70 @@ export const LoginForm = ({ onSubmit, className = '' }: LoginFormProps) => {
   });
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className={`${styles.form} ${className}`}
-      noValidate
-    >
-      <div className={styles.fieldGroup}>
-        <label htmlFor='email' className={styles.label}>
-          Email
-        </label>
-        <div className={styles.inputContainer}>
-          <input
-            id='email'
-            type='email'
-            placeholder='Example@email.com'
-            className={styles.input}
-            disabled={isSubmitting}
-            autoComplete='email'
-            {...register('email')}
-          />
-        </div>
-        <p className={styles.error}>{errors.email?.message || '\u00A0'}</p>
+    <>
+      <div className={styles.title}>
+        <h1>Hello, Tea Lover</h1>
+        <p>Continue your mindful tea ceremony. Journey with serenity awaits.</p>
       </div>
-      <div className={styles.fieldGroup}>
-        <label htmlFor='password' className={styles.label}>
-          Password
-        </label>
-        <div className={styles.inputContainer}>
-          <input
-            id='password'
-            type='password'
-            placeholder='At least 8 characters'
-            className={styles.input}
-            disabled={isSubmitting}
-            autoComplete='current-password'
-            {...register('password')}
-          />
-        </div>
-        <p className={styles.error}>{errors.password?.message || '\u00A0'}</p>
-      </div>
-      <div className={styles.forgotWrapper}>
-        <a href='#' className={styles.forgotLink}>
-          Forgot Password?
-        </a>
-      </div>
-      <button
-        type='submit'
-        disabled={isSubmitting}
-        className={styles.submitBtn}
-        aria-label={isSubmitting ? 'Signing in' : 'Sign in'}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={`${styles.form} ${className}`}
+        noValidate
       >
-        {isSubmitting ? 'Signing in...' : 'Sign in'}
-      </button>
-    </form>
+        <div className={styles.fieldGroup}>
+          <label htmlFor='email' className={styles.label}>
+            Email
+          </label>
+          <div className={styles.inputContainer}>
+            <input
+              id='email'
+              type='email'
+              placeholder='Example@email.com'
+              className={styles.input}
+              disabled={isSubmitting}
+              autoComplete='email'
+              {...register('email')}
+            />
+          </div>
+          <p className={styles.error}>{errors.email?.message || '\u00A0'}</p>
+        </div>
+        <div className={styles.fieldGroup}>
+          <label htmlFor='password' className={styles.label}>
+            Password
+          </label>
+          <div className={styles.inputContainer}>
+            <input
+              id='password'
+              type='password'
+              placeholder='At least 8 characters'
+              className={styles.input}
+              disabled={isSubmitting}
+              autoComplete='current-password'
+              {...register('password')}
+            />
+          </div>
+          <p className={styles.error}>{errors.password?.message || '\u00A0'}</p>
+        </div>
+        <div className={styles.forgotWrapper}>
+          <a href='#' className={styles.forgotLink}>
+            Forgot Password?
+          </a>
+        </div>
+        <button
+          type='submit'
+          disabled={isSubmitting}
+          className={styles.submitBtn}
+          aria-label={isSubmitting ? 'Signing in' : 'Sign in'}
+        >
+          {isSubmitting ? 'Signing in...' : 'Sign in'}
+        </button>
+      </form>
+      <div className={styles.divider}>
+        <span>or</span>
+      </div>
+      <div className={styles.signUpBtn}>
+        New to the tea tradition? <a href='#'>Sign up</a>
+      </div>
+    </>
   );
 };

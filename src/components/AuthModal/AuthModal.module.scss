@@ -87,61 +87,6 @@
       .auth {
         width: 50%;
         padding: 4rem 5.5rem 4rem 4rem;
-
-        .title {
-          h1 {
-            font-family: fonts.$secondary;
-            font-weight: 600;
-            font-style: italic;
-            margin-bottom: 0.25rem;
-          }
-
-          p {
-            margin-bottom: 1.5rem;
-          }
-        }
-
-        .divider {
-          position: relative;
-          height: 20px;
-          margin: 1.5rem 0;
-          text-align: center;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: #c9d3e0;
-          }
-
-          span {
-            position: relative;
-            background: #e6e1d0;
-            padding: 0 1rem 0.125rem 1rem;
-            font-size: 0.8125rem;
-            color: #4b5664;
-            font-weight: 500;
-            top: -0.5px;
-            white-space: nowrap;
-          }
-        }
-
-        .signUpBtn {
-          display: flex;
-          justify-content: center;
-
-          a {
-            margin-left: 0.5rem;
-            color: #3b82f6;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
       }
 
       .imgSection {

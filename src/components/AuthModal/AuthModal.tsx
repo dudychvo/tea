@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 
 import { LoginForm } from './LoginForm/LoginForm';
+import { ForgetPasswordForm } from './ForgetPasswordForm/ForgetPasswordForm';
+
 
 import test1 from '../../assets/test1.jpg';
 
@@ -40,20 +42,8 @@ export const AuthModal = () => {
         >
           <DialogPanel className={styles.panel}>
             <div className={styles.auth}>
-              <div className={styles.title}>
-                <h1>Hello, Tea Lover</h1>
-                <p>
-                  Continue your mindful tea ceremony. Journey with serenity
-                  awaits.
-                </p>
-              </div>
               <LoginForm />
-              <div className={styles.divider}>
-                <span>or</span>
-              </div>
-              <div className={styles.signUpBtn}>
-                New to the tea tradition? <a href='#'>Sign up</a>
-              </div>
+              {/* <ForgetPasswordForm /> */}
             </div>
             <div className={styles.imgSection}>
               <img src={test1} alt='#' />
