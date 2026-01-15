@@ -22,7 +22,7 @@ export const HeroHero = () => {
               enjoyment
             </div>
             <div className={styles.sloganBtn}>
-              <span>See All The Products</span>
+              <p>See All The Products</p>
             </div>
           </div>
         </div>

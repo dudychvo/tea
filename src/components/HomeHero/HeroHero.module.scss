@@ -47,13 +47,23 @@
       }
 
       .sloganBtn {
-        span {
+        margin-top: 4rem;
+        transition: all 0.2s ease;
+        p {
           font-size: 2rem;
           font-weight: 300;
           font-style: none;
-          margin-top: 4rem;
           padding-bottom: 0.3rem;
           border-bottom: 0.75px solid #fff;
+        }
+
+        &:hover {
+          cursor: pointer;
+          scale: 1.02;
+
+          p {
+            font-weight: 500;
+          }
         }
       }
     }
