@@ -19,11 +19,16 @@ const schema = Yup.object({
 type FormData = Yup.InferType<typeof schema>;
 
 interface SignUpFormProps {
+  handleButtonClick: (form: 'LOGIN' | 'SIGN_UP' | 'FORGET_PASSWORD') => void;
   onSubmit: (arg0: FormData) => Promise<void> | void;
   className?: string;
 }
 
-export const SignUpForm = ({ onSubmit, className = '' }: SignUpFormProps) => {
+export const SignUpForm = ({
+  handleButtonClick,
+  onSubmit,
+  className = '',
+}: SignUpFormProps) => {
   const {
     register,
     handleSubmit,
@@ -97,9 +102,12 @@ export const SignUpForm = ({ onSubmit, className = '' }: SignUpFormProps) => {
           </p>
         </div>
         <div className={styles.forgotWrapper}>
-          <a href='#' className={styles.forgotLink}>
+          <p
+            onClick={() => handleButtonClick('LOGIN')}
+            className={styles.forgotLink}
+          >
             Already have an account?
-          </a>
+          </p>
         </div>
         <button
           type='submit'

@@ -2,14 +2,17 @@ import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 
 import { LoginForm } from './LoginForm/LoginForm';
+import { SignUpForm } from './SignUpForm/SignUpForm';
 import { ForgetPasswordForm } from './ForgetPasswordForm/ForgetPasswordForm';
-
 
 import test1 from '../../assets/test1.jpg';
 
 import styles from './AuthModal.module.scss';
 
 export const AuthModal = () => {
+  const [form, setForm] = useState<'LOGIN' | 'SIGN_UP' | 'FORGET_PASSWORD'>(
+    'LOGIN'
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -31,7 +34,13 @@ export const AuthModal = () => {
           />
           <p>Guest</p>
         </div>
-        <button className={styles.openButton} onClick={() => setIsOpen(true)}>
+        <button
+          className={styles.openButton}
+          onClick={() => {
+            setIsOpen(true);
+            setForm('LOGIN');
+          }}
+        >
           <p>Log in</p>
         </button>
       </div>
@@ -42,8 +51,28 @@ export const AuthModal = () => {
         >
           <DialogPanel className={styles.panel}>
             <div className={styles.auth}>
-              <LoginForm />
-              {/* <ForgetPasswordForm /> */}
+              {form === 'LOGIN' ? (
+                <LoginForm
+                  handleButtonClick={(newForm) => setForm(newForm)}
+                  onSubmit={() => {
+                    console.log('submitted');
+                  }}
+                />
+              ) : form === 'SIGN_UP' ? (
+                <SignUpForm
+                  handleButtonClick={(newForm) => setForm(newForm)}
+                  onSubmit={() => {
+                    console.log('submitted');
+                  }}
+                />
+              ) : (
+                <ForgetPasswordForm
+                  handleButtonClick={(newForm) => setForm(newForm)}
+                  onSubmit={() => {
+                    console.log('submitted');
+                  }}
+                />
+              )}
             </div>
             <div className={styles.imgSection}>
               <img src={test1} alt='#' />

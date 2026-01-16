@@ -16,11 +16,16 @@ const schema = Yup.object({
 type FormData = Yup.InferType<typeof schema>;
 
 interface LoginFormProps {
+  handleButtonClick: (form: 'LOGIN' | 'SIGN_UP' | 'FORGET_PASSWORD') => void;
   onSubmit: (arg0: FormData) => Promise<void> | void;
   className?: string;
 }
 
-export const LoginForm = ({ onSubmit, className = '' }: LoginFormProps) => {
+export const LoginForm = ({
+  handleButtonClick,
+  onSubmit,
+  className = '',
+}: LoginFormProps) => {
   const {
     register,
     handleSubmit,
@@ -75,9 +80,12 @@ export const LoginForm = ({ onSubmit, className = '' }: LoginFormProps) => {
           <p className={styles.error}>{errors.password?.message || '\u00A0'}</p>
         </div>
         <div className={styles.forgotWrapper}>
-          <a href='#' className={styles.forgotLink}>
+          <p
+            onClick={() => handleButtonClick('FORGET_PASSWORD')}
+            className={styles.forgotLink}
+          >
             Forgot Password?
-          </a>
+          </p>
         </div>
         <button
           type='submit'
@@ -92,7 +100,8 @@ export const LoginForm = ({ onSubmit, className = '' }: LoginFormProps) => {
         <span>or</span>
       </div>
       <div className={styles.signUpBtn}>
-        New to the tea tradition? <a href='#'>Sign up</a>
+        New to the tea tradition?
+        <p onClick={() => handleButtonClick('SIGN_UP')}>Sign up</p>
       </div>
     </>
   );

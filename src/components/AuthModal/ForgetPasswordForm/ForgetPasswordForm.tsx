@@ -13,11 +13,13 @@ const schema = Yup.object({
 type FormData = Yup.InferType<typeof schema>;
 
 interface ForgetPasswordFormProps {
+  handleButtonClick: (form: 'LOGIN' | 'SIGN_UP' | 'FORGET_PASSWORD') => void;
   onSubmit: (arg0: FormData) => Promise<void> | void;
   className?: string;
 }
 
 export const ForgetPasswordForm = ({
+  handleButtonClick,
   onSubmit,
   className = '',
 }: ForgetPasswordFormProps) => {
@@ -70,7 +72,7 @@ export const ForgetPasswordForm = ({
         <span>or</span>
       </div>
       <div className={styles.signUpBtn}>
-        <a href='#'>Back to Sign In</a>
+        <p onClick={() => handleButtonClick('LOGIN')}>Back to Sign In</p>
       </div>
     </>
   );
