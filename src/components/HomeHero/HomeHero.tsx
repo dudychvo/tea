@@ -6,7 +6,7 @@ import styles from './HeroHero.module.scss';
 export const HeroHero = () => {
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.heroContainer}>
         <div className={styles.slogan}>
           <div className={styles.sloganText}>
             <div>
