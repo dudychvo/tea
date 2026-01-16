@@ -1,3 +1,4 @@
+// Variables (adjust to match your global variables)
 $tea-green-dark: #2c3e30; // Deep forest green
 $tea-green-light: #4a7043; // Bamboo green
 $cream: #f5f5dc; // Pale cream
@@ -11,32 +12,6 @@ $font-sans: 'Inter', sans-serif;
   color: $cream;
   margin-top: 100px; // Space for the wave to overlap
   font-family: $font-sans;
-}
-
-/* --- Organic Wave Divider --- */
-.waveDivider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg); // Flips wave to sit on top
-
-  svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 80px;
-
-    @media (min-width: 768px) {
-      height: 120px;
-    }
-  }
-
-  .shapeFill {
-    fill: #ffffff; // Matches your website body background
-  }
 }
 
 .container {
@@ -79,7 +54,6 @@ $font-sans: 'Inter', sans-serif;
   }
 }
 
-/* --- Unique Feature: Floating Newsletter Card --- */
 .newsletterCard {
   background: rgba(255, 255, 255, 0.05); // Glassmorphism effect
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -150,7 +124,6 @@ $font-sans: 'Inter', sans-serif;
   }
 }
 
-/* --- Navigation Links --- */
 .navColumn {
   @media (min-width: 900px) {
     text-align: right;
