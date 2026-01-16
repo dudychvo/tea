@@ -5,8 +5,7 @@ import styles from './Header.module.scss';
 export const Header = () => {
   return (
     <>
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
+        <div className={styles.headerContainer}>
           <h1>Tea Ceremony</h1>
           <nav className={styles.nav}>
             <ul>
@@ -26,7 +25,6 @@ export const Header = () => {
           </nav>
           <AuthModal />
         </div>
-      </div>
     </>
   );
 };
