@@ -1,10 +1,4 @@
-.container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.backgroundWrapper {
+.heroWrapper {
   position: relative;
   background: url(../../assets/test2.jpg);
   background-size: cover;
@@ -30,8 +24,13 @@
     z-index: 2;
   }
 
-  .topContainer {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
     height: 100vh;
+  }
+
+  .container {
     display: flex;
     align-items: center;
     flex-direction: column;
