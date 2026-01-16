@@ -21,9 +21,9 @@ export const HeroHero = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               enjoyment
             </div>
-            <div className={styles.sloganBtn}>
-              <p>See All The Products</p>
-            </div>
+            <button className={styles.sloganBtn} data-text='Explore Tea'>
+              <span>Explore Tea</span>
+            </button>
           </div>
         </div>
       </div>
