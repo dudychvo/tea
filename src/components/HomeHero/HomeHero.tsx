@@ -1,5 +1,5 @@
-import firstImg from '../../assets/landscape.jpg';
-import secondImg from '../../assets/teaPot.png';
+import firstImg from '../../assets/landscape-home-hero.jpg';
+import secondImg from '../../assets/tea-home-hero.png';
 
 import styles from './HeroHero.module.scss';
 
@@ -12,7 +12,7 @@ export const HeroHero = () => {
             <div>
               <img src={firstImg} alt='#' className={styles.firstImg} />
               Tea
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               Harmony - your
             </div>
             <div>
@@ -21,7 +21,7 @@ export const HeroHero = () => {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               enjoyment
             </div>
-            <button className={styles.sloganBtn} data-text='Explore Tea'>
+            <button className={styles.sloganBtn}>
               <span>Explore Tea</span>
             </button>
           </div>
