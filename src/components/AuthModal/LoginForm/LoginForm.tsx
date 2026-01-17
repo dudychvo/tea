@@ -37,7 +37,7 @@ export const LoginForm = ({
   return (
     <>
       <div className={styles.title}>
-        <h1>Hello, Tea Lover</h1>
+        <h1>Welcome back</h1>
         <p>Continue your mindful tea ceremony. Journey with serenity awaits.</p>
       </div>
       <form

@@ -5,7 +5,8 @@ import { LoginForm } from './LoginForm/LoginForm';
 import { SignUpForm } from './SignUpForm/SignUpForm';
 import { ForgetPasswordForm } from './ForgetPasswordForm/ForgetPasswordForm';
 
-import test1 from '../../assets/test1.jpg';
+import authModal from '../../assets/auth-modal.jpg';
+import defaultAvatar from '../../assets/default-avatar.jpg';
 
 import styles from './AuthModal.module.scss';
 
@@ -27,21 +28,36 @@ export const AuthModal = () => {
   return (
     <>
       <div className={styles.user}>
-        <div className={styles.avatarContainer}>
-          <img
-            src='https://www.jordanharbinger.com/wp-content/uploads/2018/09/be-the-most-interesting.jpg'
-            alt='#'
-          />
-          <p>Guest</p>
-        </div>
         <button
-          className={styles.openButton}
+          className={styles.userButton}
           onClick={() => {
             setIsOpen(true);
             setForm('LOGIN');
           }}
         >
-          <p>Log in</p>
+          <div className={styles.avatarWrapper}>
+            <img src={defaultAvatar} alt='User avatar' />
+            <div className={styles.statusDot}></div>
+          </div>
+          <div className={styles.userInfo}>
+            <span className={styles.greeting}>Log in </span>
+            <span className={styles.username}>Guest</span>
+          </div>
+          <svg
+            className={styles.chevron}
+            width='16'
+            height='16'
+            viewBox='0 0 16 16'
+            fill='none'
+          >
+            <path
+              d='M4 6L8 10L12 6'
+              stroke='currentColor'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+          </svg>
         </button>
       </div>
 
@@ -75,7 +91,7 @@ export const AuthModal = () => {
               )}
             </div>
             <div className={styles.imgSection}>
-              <img src={test1} alt='#' />
+              <img src={authModal} alt='#' />
             </div>
           </DialogPanel>
         </div>

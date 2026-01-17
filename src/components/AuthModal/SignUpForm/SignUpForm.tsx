@@ -40,8 +40,8 @@ export const SignUpForm = ({
   return (
     <>
       <div className={styles.title}>
-        <h1>Hello, Tea Lover</h1>
-        <p>Continue your mindful tea ceremony. Journey with serenity awaits.</p>
+        <h1>Begin Your Tea Journey</h1>
+        <p>Create an account to discover your perfect blend.</p>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
