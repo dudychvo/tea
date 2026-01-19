@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { Header } from '../../components/Header/Header';
 import { HeroHero } from '../../components/HomeHero/HomeHero';
 import { HomeQuiz } from '../../components/HomeQuiz/HomeQuiz';
@@ -10,7 +12,7 @@ export const Home = () => {
     <>
       <div className={styles.homeWrapper}>
         <div className={styles.heroWrapper}>
-          <div className={styles.container}>
+          <div className={clsx(styles.container, styles.fullVH)}>
             <Header />
             <HeroHero />
           </div>
