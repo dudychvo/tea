@@ -1,5 +1,5 @@
 // Variables (adjust to match your global variables)
-$tea-green-dark: #2c3e30; // Deep forest green
+$tea-green-dark: #1e3018; // Deep forest green
 $tea-green-light: #4a7043; // Bamboo green
 $cream: #f5f5dc; // Pale cream
 $gold-accent: #d8a48f; // Warm earth/gold
@@ -10,7 +10,6 @@ $font-sans: 'Inter', sans-serif;
   position: relative;
   background-color: $tea-green-dark;
   color: $cream;
-  margin-top: 100px; // Space for the wave to overlap
   font-family: $font-sans;
 }
 
@@ -62,7 +61,9 @@ $font-sans: 'Inter', sans-serif;
   text-align: center;
   backdrop-filter: blur(4px);
   transform: translateY(0);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
