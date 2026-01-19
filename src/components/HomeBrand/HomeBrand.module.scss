@@ -1,0 +1,95 @@
+@use '../../variables/fonts';
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 48px;
+
+  @media (max-width: 768px) {
+    padding: 60px 24px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.textSide {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8b7355;
+  opacity: 0.7;
+}
+
+.heading {
+  font-size: 1.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #2c2c2c;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.statsSide {
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+
+  @media (max-width: 968px) {
+    justify-content: flex-start;
+    gap: 48px;
+  }
+
+  @media (max-width: 568px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.stat {
+  text-align: center;
+
+  @media (max-width: 968px) {
+    text-align: left;
+  }
+}
+
+.number {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #8b7355;
+  margin: 0 0 4px 0;
+  line-height: 1;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #666;
+  margin: 0;
+}
