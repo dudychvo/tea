@@ -4,13 +4,13 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 80px 64px;
+  padding: 64px 48px;
 }
 
 .heroContent {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     flex-direction: column;
