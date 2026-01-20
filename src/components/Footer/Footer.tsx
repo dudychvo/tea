@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaInstagram, FaTwitter, FaPinterest, FaArrowUp } from 'react-icons/fa';
+
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
@@ -11,7 +12,7 @@ export const Footer = () => {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add subscription logic here
+    //TODO: Subscription logic
     console.log('Subscribed:', email);
     setEmail('');
   };
@@ -21,7 +22,7 @@ export const Footer = () => {
       <div className={styles.container}>
         <div className={styles.topSection}>
           <div className={styles.brandColumn}>
-            <h2 className={styles.logo}>TEA CEREMONY</h2>
+            <h2 className={styles.logo}>Tea Ceremony</h2>
             <p className={styles.mission}>
               Slowing down the world, <br />
               one cup at a time.
@@ -53,10 +54,10 @@ export const Footer = () => {
                 <a href='#ceremony'>Ceremony Sets</a>
               </li>
               <li>
-                <a href='#journal'>The Journal</a>
+                <a href='#journal'>See the guidance</a>
               </li>
               <li>
-                <a href='#about'>Our Story</a>
+                <a href='#about'>Start the quiz</a>
               </li>
             </ul>
           </div>
