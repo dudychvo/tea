@@ -11,15 +11,12 @@ export const HeroHero = () => {
           <div className={styles.sloganText}>
             <div>
               <img src={firstImg} alt='#' className={styles.firstImg} />
-              Tea
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Harmony - your
+              Brew &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              small peaceful
             </div>
             <div>
               <img src={secondImg} alt='#' className={styles.secondImg} />
-              corner of true tea
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              enjoyment
+              pauses, one cup &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at a time
             </div>
             <button className={styles.sloganBtn}>
               <span>Explore Tea</span>
