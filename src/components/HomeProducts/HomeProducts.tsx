@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './HomeProducts.module.scss';
 
 export const HomeProducts = () => {
@@ -46,38 +48,45 @@ export const HomeProducts = () => {
         </div>
 
         <div className={styles.grid}>
-          <a
-            href={collections[0].href}
-            className={`${styles.card} ${styles.large}`}
-          >
-            <img
-              src={collections[0].image}
-              alt={collections[0].name}
-              className={styles.cardImage}
-            />
-            <div className={styles.overlay}></div>
-            <p className={styles.cardText}>{collections[0].name}</p>
-          </a>
+          <Link to='/shop'>
+            <a
+              href={collections[0].href}
+              className={`${styles.card} ${styles.large}`}
+            >
+              <img
+                src={collections[0].image}
+                alt={collections[0].name}
+                className={styles.cardImage}
+              />
+              <div className={styles.overlay}></div>
+              <p className={styles.cardText}>{collections[0].name}</p>
+            </a>
+          </Link>
 
           <div className={styles.rightColumn}>
-            <a href={collections[1].href} className={styles.card}>
-              <img
-                src={collections[1].image}
-                alt={collections[1].name}
-                className={styles.cardImage}
-              />
-              <div className={styles.overlay}></div>
-              <p className={styles.cardText}>{collections[1].name}</p>
-            </a>
-            <a href={collections[2].href} className={styles.card}>
-              <img
-                src={collections[2].image}
-                alt={collections[2].name}
-                className={styles.cardImage}
-              />
-              <div className={styles.overlay}></div>
-              <p className={styles.cardText}>{collections[2].name}</p>
-            </a>
+            <Link to='/shop'>
+              <a href={collections[1].href} className={styles.card}>
+                <img
+                  src={collections[1].image}
+                  alt={collections[1].name}
+                  className={styles.cardImage}
+                />
+                <div className={styles.overlay}></div>
+                <p className={styles.cardText}>{collections[1].name}</p>
+              </a>
+            </Link>
+
+            <Link to='/shop'>
+              <a href={collections[2].href} className={styles.card}>
+                <img
+                  src={collections[2].image}
+                  alt={collections[2].name}
+                  className={styles.cardImage}
+                />
+                <div className={styles.overlay}></div>
+                <p className={styles.cardText}>{collections[2].name}</p>
+              </a>
+            </Link>
           </div>
         </div>
       </div>
