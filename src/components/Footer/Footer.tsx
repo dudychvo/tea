@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaInstagram, FaTwitter, FaPinterest, FaArrowUp } from 'react-icons/fa';
 
 import styles from './Footer.module.scss';
@@ -48,16 +49,16 @@ export const Footer = () => {
           <div className={styles.navColumn}>
             <ul className={styles.links}>
               <li>
-                <a href='#shop'>Shop Tea</a>
+                <Link to='/shop'>Shop tea</Link>
               </li>
               <li>
-                <a href='#ceremony'>Ceremony Sets</a>
+                <Link to='/shop'>Ceremony Sets</Link>
               </li>
               <li>
-                <a href='#journal'>See the guidance</a>
+                <Link to='/guide'>See the guidance</Link>
               </li>
               <li>
-                <a href='#about'>Start the quiz</a>
+                <a href='#'>Start the quiz</a>
               </li>
             </ul>
           </div>
