@@ -19,7 +19,7 @@ export const HomeQuiz = () => {
 
         <div className={styles.visualSection}>
           <div className={styles.teaIllustration}>
-            <div className={styles.circle}></div>
+            <div className={styles.image}></div>
           </div>
         </div>
       </div>
