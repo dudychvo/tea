@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import firstImg from '../../assets/landscape-home-hero.jpg';
 import secondImg from '../../assets/tea-home-hero.png';
 
@@ -11,15 +13,17 @@ export const HeroHero = () => {
           <div className={styles.sloganText}>
             <div>
               <img src={firstImg} alt='#' className={styles.firstImg} />
-              Brew &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              small peaceful
+              Brew &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small
+              peaceful
             </div>
             <div>
               <img src={secondImg} alt='#' className={styles.secondImg} />
               pauses, one cup &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at a time
             </div>
             <button className={styles.sloganBtn}>
-              <span>Explore Tea</span>
+              <Link to='/shop'>
+                <span>Explore Tea</span>
+              </Link>
             </button>
           </div>
         </div>
