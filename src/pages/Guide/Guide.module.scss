@@ -1,0 +1,14 @@
+.guideWrapper {
+  .headerWrapper {
+    background-color: #373d23;
+  }
+
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
