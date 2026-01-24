@@ -1,7 +1,7 @@
 import { Products } from '../../data/ProductsData';
 
 import { Header } from '../../components/Header/Header';
-import { ShopNav } from '../../components/ShopNav/ShopNav';
+// import { ShopNav } from '../../components/ShopNav/ShopNav';
 import { ShopGrid } from '../../components/ShopGrid/ShopGrid';
 import { Footer } from '../../components/Footer/Footer';
 
@@ -17,7 +17,7 @@ export const Shop = () => {
           </div>
         </div>
         <div className={styles.container}>
-          <ShopNav />
+          {/* <ShopNav /> */}
           <ShopGrid products={Products} />
         </div>
         <Footer />
