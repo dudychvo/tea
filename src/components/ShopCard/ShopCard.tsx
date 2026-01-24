@@ -1,13 +1,16 @@
-// ShopCard.tsx
+import { useCart } from '../../context/CartContext';
+
 import type { Product } from '../../types/ProductType';
+
 import styles from './ShopCard.module.scss';
 
 interface ShopCardProps {
   product: Product;
-  onAddToCart?: () => void;
 }
 
-const ShopCard = ({ product, onAddToCart }: ShopCardProps) => {
+const ShopCard = ({ product }: ShopCardProps) => {
+  const { addToCart, updateQuantity, getItemQuantity } = useCart();
+
   const {
     name,
     subtitle,
@@ -18,6 +21,25 @@ const ShopCard = ({ product, onAddToCart }: ShopCardProps) => {
     pricePer100g,
     badges,
   } = product;
+
+  // Get current quantity of this product in cart
+  const quantity = getItemQuantity(product.id);
+  const isInCart = quantity > 0;
+
+  // Handle add to cart
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
+  // Handle increase quantity
+  const handleIncrease = () => {
+    updateQuantity(product.id, quantity + 1);
+  };
+
+  // Handle decrease quantity
+  const handleDecrease = () => {
+    updateQuantity(product.id, quantity - 1);
+  };
 
   return (
     <article className={styles.card}>
@@ -46,9 +68,30 @@ const ShopCard = ({ product, onAddToCart }: ShopCardProps) => {
             )}
           </div>
 
-          <button className={styles.cartButton} onClick={onAddToCart}>
-            Add to cart
-          </button>
+          {/* Show "Add to cart" button OR quantity controls */}
+          {!isInCart ? (
+            <button className={styles.cartButton} onClick={handleAddToCart}>
+              Add to cart
+            </button>
+          ) : (
+            <div className={styles.quantityControls}>
+              <button
+                className={styles.quantityButton}
+                onClick={handleDecrease}
+                aria-label='Decrease quantity'
+              >
+                −
+              </button>
+              <span className={styles.quantity}>{quantity}</span>
+              <button
+                className={styles.quantityButton}
+                onClick={handleIncrease}
+                aria-label='Increase quantity'
+              >
+                +
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </article>
