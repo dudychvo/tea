@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import firstImg from '../../assets/landscape-home-hero.jpg';
 import secondImg from '../../assets/tea-home-hero.png';
 
-import styles from './HeroHero.module.scss';
+import styles from './HomeHero.module.scss';
 
 export const HeroHero = () => {
   return (
