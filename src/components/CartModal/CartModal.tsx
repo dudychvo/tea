@@ -7,14 +7,14 @@ import styles from './CartModal.module.scss';
 export const CartModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const { cartItems, updateQuantity, removeFromCart, getTotalItems } = useCart();
-  
+  const { cartItems, updateQuantity, removeFromCart, getTotalItems } =
+    useCart();
+
   const itemCount = getTotalItems();
 
-  // Calculate total price
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
-    0
+    0,
   );
 
   const closeModal = () => {
@@ -28,19 +28,16 @@ export const CartModal = () => {
   return (
     <>
       {/* Cart Button */}
-      <button 
-        className={styles.cartButton} 
-        onClick={() => setIsOpen(true)}
-      >
+      <button className={styles.cartButton} onClick={() => setIsOpen(true)}>
         <span className={styles.text}>Cart</span>
-        {itemCount > 0 && (
-          <span className={styles.badge}>{itemCount}</span>
-        )}
+        {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
       </button>
 
       {/* Modal */}
       <Dialog open={isOpen} onClose={closeModal} className={styles.dialog}>
-        <div className={`${styles.overlay} ${isAnimating ? styles.closed : ''}`}>
+        <div
+          className={`${styles.overlay} ${isAnimating ? styles.closed : ''}`}
+        >
           <div className={styles.container}>
             <DialogPanel className={styles.panel}>
               {/* Header */}
@@ -48,10 +45,10 @@ export const CartModal = () => {
                 <DialogTitle className={styles.title}>
                   Your Cart ({getTotalItems()})
                 </DialogTitle>
-                <button 
-                  className={styles.closeButton} 
+                <button
+                  className={styles.closeButton}
                   onClick={closeModal}
-                  aria-label="Close cart"
+                  aria-label='Close cart'
                 >
                   ✕
                 </button>
@@ -62,10 +59,29 @@ export const CartModal = () => {
                 {cartItems.length === 0 ? (
                   // Empty State
                   <div className={styles.emptyCart}>
-                    <span className={styles.emptyIcon}>🛒</span>
+                    <div className={styles.emptyIconWrapper}>
+                      <svg
+                        className={styles.emptyIcon}
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth='1.5'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      >
+                        <circle cx='9' cy='21' r='1' />
+                        <circle cx='20' cy='21' r='1' />
+                        <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6' />
+                      </svg>
+                    </div>
                     <p className={styles.emptyText}>Your cart is empty</p>
-                    <p className={styles.emptySubtext}>Add some delicious tea to get started!</p>
-                    <button className={styles.continueShopping} onClick={closeModal}>
+                    <p className={styles.emptySubtext}>
+                      Add some delicious tea to get started!
+                    </p>
+                    <button
+                      className={styles.continueShopping}
+                      onClick={closeModal}
+                    >
                       Continue Shopping
                     </button>
                   </div>
@@ -86,12 +102,17 @@ export const CartModal = () => {
 
                           {/* Product Info */}
                           <div className={styles.itemInfo}>
-                            <h3 className={styles.itemName}>{item.product.name}</h3>
+                            <h3 className={styles.itemName}>
+                              {item.product.name}
+                            </h3>
                             <p className={styles.itemMeta}>
-                              {item.product.teaType} · {item.product.caffeine} caffeine
+                              {item.product.teaType} · {item.product.caffeine}{' '}
+                              caffeine
                             </p>
                             <div className={styles.itemPricing}>
-                              <span className={styles.itemPrice}>£{item.product.price}</span>
+                              <span className={styles.itemPrice}>
+                                £{item.product.price}
+                              </span>
                               {item.product.pricePer100g && (
                                 <span className={styles.itemPriceUnit}>
                                   £{item.product.pricePer100g}/100g
@@ -107,19 +128,27 @@ export const CartModal = () => {
                               <button
                                 className={styles.quantityButton}
                                 onClick={() =>
-                                  updateQuantity(item.product.id, item.quantity - 1)
+                                  updateQuantity(
+                                    item.product.id,
+                                    item.quantity - 1,
+                                  )
                                 }
-                                aria-label="Decrease quantity"
+                                aria-label='Decrease quantity'
                               >
                                 −
                               </button>
-                              <span className={styles.quantity}>{item.quantity}</span>
+                              <span className={styles.quantity}>
+                                {item.quantity}
+                              </span>
                               <button
                                 className={styles.quantityButton}
                                 onClick={() =>
-                                  updateQuantity(item.product.id, item.quantity + 1)
+                                  updateQuantity(
+                                    item.product.id,
+                                    item.quantity + 1,
+                                  )
                                 }
-                                aria-label="Increase quantity"
+                                aria-label='Increase quantity'
                               >
                                 +
                               </button>
@@ -134,18 +163,20 @@ export const CartModal = () => {
                             <button
                               className={styles.removeButton}
                               onClick={() => removeFromCart(item.product.id)}
-                              aria-label="Remove item"
-                              title="Remove from cart"
+                              aria-label='Remove item'
+                              title='Remove from cart'
                             >
-                              <svg 
-                                width="18" 
-                                height="18" 
-                                viewBox="0 0 24 24" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                strokeWidth="2"
+                              <svg
+                                width='18'
+                                height='18'
+                                viewBox='0 0 24 24'
+                                fill='none'
+                                stroke='currentColor'
+                                strokeWidth='2'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
                               >
-                                <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6" />
+                                <path d='M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6' />
                               </svg>
                             </button>
                           </div>
@@ -157,7 +188,20 @@ export const CartModal = () => {
                     <div className={styles.footer}>
                       {/* Shipping Notice */}
                       <div className={styles.shippingNotice}>
-                        <span>🚚</span>
+                        <svg
+                          className={styles.shippingIcon}
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          strokeWidth='1.5'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        >
+                          <rect x='1' y='3' width='15' height='13' />
+                          <path d='M16 8h4l3 3v5h-7V8z' />
+                          <circle cx='5.5' cy='18.5' r='2.5' />
+                          <circle cx='18.5' cy='18.5' r='2.5' />
+                        </svg>
                         <p>Free shipping on orders over £50</p>
                       </div>
 
@@ -165,7 +209,9 @@ export const CartModal = () => {
                       <div className={styles.totalSection}>
                         <div className={styles.totalRow}>
                           <span className={styles.totalLabel}>Subtotal:</span>
-                          <span className={styles.subtotalPrice}>£{totalPrice.toFixed(2)}</span>
+                          <span className={styles.subtotalPrice}>
+                            £{totalPrice.toFixed(2)}
+                          </span>
                         </div>
                         <div className={styles.totalRow}>
                           <span className={styles.totalLabel}>Shipping:</span>
@@ -176,7 +222,10 @@ export const CartModal = () => {
                         <div className={styles.totalRowFinal}>
                           <span className={styles.totalLabelFinal}>Total:</span>
                           <span className={styles.totalPrice}>
-                            £{(totalPrice + (totalPrice >= 50 ? 0 : 4.99)).toFixed(2)}
+                            £
+                            {(
+                              totalPrice + (totalPrice >= 50 ? 0 : 4.99)
+                            ).toFixed(2)}
                           </span>
                         </div>
                       </div>
@@ -185,7 +234,10 @@ export const CartModal = () => {
                       <button className={styles.checkoutButton}>
                         Proceed to Checkout
                       </button>
-                      <button className={styles.continueButton} onClick={closeModal}>
+                      <button
+                        className={styles.continueButton}
+                        onClick={closeModal}
+                      >
                         Continue Shopping
                       </button>
                     </div>
