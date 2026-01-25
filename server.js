@@ -118,7 +118,6 @@ Please provide ONLY a JSON response in this exact format with NO additional text
       console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
       console.error('');
 
-      // Specific error messages
       if (response.status === 400) {
         console.error('💡 Possible causes:');
         console.error('   - Invalid request format');
@@ -155,7 +154,6 @@ Please provide ONLY a JSON response in this exact format with NO additional text
     console.log(content);
     console.log('');
 
-    // Extract JSON
     let jsonContent = content;
     const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
@@ -202,7 +200,6 @@ Please provide ONLY a JSON response in this exact format with NO additional text
   }
 });
 
-// Health check endpoint
 app.get('/health', (req, res) => {
   const apiKeyStatus = process.env.VITE_PERPLEXITY_API_KEY
     ? 'configured'
@@ -215,7 +212,6 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Root endpoint
 app.get('/', (req, res) => {
   res.json({
     service: 'Tea Recommendation API',
