@@ -10,13 +10,10 @@
 
 .heroContent {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  text-align: center;
+  gap: 3rem;
 }
 
 .textSection {
@@ -36,15 +33,11 @@
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 500;
   line-height: 1.1;
   color: colours.$h-text-main;
   margin: 0 0 24px 0;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
 }
 
 .description {
@@ -100,23 +93,37 @@
 
 .teaIllustration {
   position: relative;
-  width: 400px;
-  height: 400px;
-
-  @media (max-width: 768px) {
-    width: 300px;
-    height: 300px;
-  }
+  width: 300px;
+  height: 300px;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  background: rgba($color: #78624c, $alpha: 0.8);
+  background: rgba(120, 98, 76, 0.8);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-
   background-image: url('../../assets/test.png');
-  background-size: 100%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .heroContent {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .teaIllustration {
+    width: 400px;
+    height: 400px;
+  }
 }
