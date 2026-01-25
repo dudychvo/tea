@@ -20,12 +20,6 @@
       align-items: center;
       text-align: center;
 
-      @media (min-width: 900px) {
-        grid-template-columns: 1fr 1.5fr 1fr;
-        text-align: left;
-        align-items: start;
-      }
-
       .brandColumn {
         .logo {
           font-size: 2.5rem;
@@ -73,11 +67,11 @@
 
         .inputGroup {
           display: flex;
+          flex-direction: column;
           gap: 0.5rem;
 
           input {
             color: white;
-            flex: 1;
             background: transparent;
             border: 1px solid rgba(white, 0.3);
             border-radius: 4px;
@@ -98,7 +92,7 @@
             background: colours.$f-btn-start;
             color: white;
             border: none;
-            padding: 0 1.5rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
@@ -114,10 +108,6 @@
       }
 
       .navColumn {
-        @media (min-width: 900px) {
-          text-align: right;
-        }
-
         .links {
           list-style: none;
           padding: 0;
@@ -145,6 +135,7 @@
 
               &:hover {
                 color: colours.$link-hover;
+
                 &::after {
                   width: 100%;
                   left: 0;
@@ -172,11 +163,6 @@
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
-      }
 
       .socials {
         display: flex;
@@ -217,6 +203,46 @@
           background: colours.$link-hover;
           color: colours.$footer-bg;
           transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .footer {
+    .container {
+      .newsletterCard {
+        .inputGroup {
+          flex-direction: row;
+
+          input {
+            flex: 1;
+          }
+        }
+
+        .topSection {
+          .bottomSection {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .footer {
+    .container {
+      .topSection {
+        grid-template-columns: 1fr 1.5fr 1fr;
+        text-align: left;
+        align-items: start;
+
+        .navColumn {
+          text-align: right;
         }
       }
     }

@@ -29,6 +29,7 @@ export const Footer = () => {
               one cup at a time.
             </p>
           </div>
+
           <div className={styles.newsletterCard}>
             <h3>Join the Inner Circle</h3>
             <p>Receive weekly brewing guides and rare harvest alerts.</p>
