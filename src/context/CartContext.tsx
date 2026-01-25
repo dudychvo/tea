@@ -1,7 +1,7 @@
 // context/CartContext.tsx
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-import type { Product } from '../../types/ProductType';
+import type { Product } from '../types/ProductType';
 
 interface CartItem {
   product: Product;
@@ -28,27 +28,23 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const existingItem = prev.find((item) => item.product.id === product.id);
 
       if (existingItem) {
-        // Product already in cart, increase quantity
         return prev.map((item) =>
           item.product.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item,
         );
       } else {
-        // New product, add to cart with quantity 1
         return [...prev, { product, quantity: 1 }];
       }
     });
   };
 
-  // Remove product from cart completely
   const removeFromCart = (productId: string) => {
     setCartItems((prev) =>
       prev.filter((item) => item.product.id !== productId),
     );
   };
 
-  // Update quantity (or remove if quantity is 0)
   const updateQuantity = (productId: string, quantity: number) => {
     if (quantity <= 0) {
       removeFromCart(productId);
@@ -61,7 +57,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // Get quantity of specific product
   const getItemQuantity = (productId: string): number => {
     const item = cartItems.find((item) => item.product.id === productId);
     return item ? item.quantity : 0;
@@ -88,7 +83,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Custom hook to use cart
 // eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
   const context = useContext(CartContext);
