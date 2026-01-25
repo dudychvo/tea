@@ -241,19 +241,16 @@ export const QuizModal = () => {
       },
     };
 
-    // Try to match based on caffeine and time
     let key = `${userAnswers.caffeinePreference}-${userAnswers.timeOfDay}`;
     if (recommendations[key]) {
       return recommendations[key];
     }
 
-    // Try caffeine and purpose
     key = `${userAnswers.caffeinePreference}-${userAnswers.purpose}`;
     if (recommendations[key]) {
       return recommendations[key];
     }
 
-    // Fallback based on caffeine level only
     if (userAnswers.caffeinePreference === 'high') {
       return userAnswers.purpose === 'energy'
         ? recommendations['high-energy']
@@ -270,7 +267,6 @@ export const QuizModal = () => {
         : recommendations['medium-green'];
     }
 
-    // Ultimate fallback
     return recommendations['medium-green'];
   };
 
@@ -347,19 +343,16 @@ export const QuizModal = () => {
 
   return (
     <>
-      {/* Quiz Button */}
       <button className={styles.quizButton} onClick={() => setIsOpen(true)}>
         <span className={styles.text}>Quiz</span>
       </button>
 
-      {/* Modal */}
       <Dialog open={isOpen} onClose={closeModal} className={styles.dialog}>
         <div
           className={`${styles.overlay} ${isAnimating ? styles.closed : ''}`}
         >
           <div className={styles.container}>
             <DialogPanel className={styles.panel}>
-              {/* Close Button */}
               <button
                 className={styles.closeButton}
                 onClick={closeModal}
@@ -367,8 +360,6 @@ export const QuizModal = () => {
               >
                 ✕
               </button>
-
-              {/* Progress Bar */}
               {hasStarted && currentStep < questions.length && (
                 <div className={styles.progressBar}>
                   <div
@@ -379,10 +370,7 @@ export const QuizModal = () => {
                   />
                 </div>
               )}
-
-              {/* Content */}
               {!hasStarted ? (
-                // Start Page
                 <div className={styles.startContainer}>
                   <div className={styles.startIconWrapper}>
                     <svg
@@ -404,7 +392,6 @@ export const QuizModal = () => {
                     tailored to your taste preferences, lifestyle, and desired
                     experience.
                   </p>
-
                   <div className={styles.featuresGrid}>
                     <div className={styles.feature}>
                       <div className={styles.featureIcon}>
@@ -448,11 +435,9 @@ export const QuizModal = () => {
                       <span className={styles.featureText}>Personalized</span>
                     </div>
                   </div>
-
                   <button className={styles.startButton} onClick={startQuiz}>
                     Start Quiz
                   </button>
-
                   <p className={styles.timeEstimate}>Takes about 1 minute</p>
                 </div>
               ) : currentStep < questions.length ? (
@@ -493,7 +478,6 @@ export const QuizModal = () => {
                   </div>
                 </div>
               ) : (
-                // Results
                 <div className={styles.resultsContainer}>
                   {isLoading ? (
                     <div className={styles.loadingContainer}>
@@ -542,14 +526,12 @@ export const QuizModal = () => {
                             ))}
                           </div>
                         </div>
-
                         <div className={styles.detailCard}>
                           <h4 className={styles.detailTitle}>Caffeine Level</h4>
                           <p className={styles.caffeineLevel}>
                             {recommendation.caffeineLevel}
                           </p>
                         </div>
-
                         <div className={styles.detailCard}>
                           <h4 className={styles.detailTitle}>Brewing Guide</h4>
                           <p className={styles.brewingDetail}>
@@ -561,7 +543,6 @@ export const QuizModal = () => {
                             {recommendation.brewingInstructions.time}
                           </p>
                         </div>
-
                         <div className={styles.detailCard}>
                           <h4 className={styles.detailTitle}>Benefits</h4>
                           <ul className={styles.benefitsList}>
@@ -570,7 +551,6 @@ export const QuizModal = () => {
                             ))}
                           </ul>
                         </div>
-
                         <div className={styles.detailCard}>
                           <h4 className={styles.detailTitle}>Best For</h4>
                           <ul className={styles.benefitsList}>
@@ -580,7 +560,6 @@ export const QuizModal = () => {
                           </ul>
                         </div>
                       </div>
-
                       <div className={styles.resultsActions}>
                         <button
                           className={styles.retakeButton}
