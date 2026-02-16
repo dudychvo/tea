@@ -103,3 +103,109 @@
     transform: translateY(-1px); /* Exact same */
   }
 }
+
+// Mobile (< 640px)
+@media (max-width: 639px) {
+  .title {
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.15rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .form {
+    gap: 0.5rem;
+  }
+
+  .fieldGroup {
+    height: 4.5rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .input {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .error {
+    font-size: 0.625rem;
+  }
+
+  .forgotLink {
+    font-size: 0.6875rem;
+  }
+
+  .submitBtn {
+    padding: 0.75rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .divider {
+    margin: 1rem 0;
+
+    span {
+      font-size: 0.75rem;
+      padding: 0 0.75rem 0.125rem 0.75rem;
+    }
+  }
+
+  .signUpBtn {
+    font-size: 0.75rem;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    p {
+      margin-left: 0;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+// Tablet (640px - 1023px)
+@media (min-width: 640px) and (max-width: 1023px) {
+  .title {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  .form {
+    gap: 0.65rem;
+  }
+
+  .fieldGroup {
+    height: 4.75rem;
+  }
+}
+
+// Touch device improvements
+@media (hover: none) and (pointer: coarse) {
+  .input {
+    min-height: 2.75rem; // Better touch targets [web:1]
+    font-size: 16px; // Prevents iOS zoom on focus
+  }
+
+  .submitBtn {
+    min-height: 2.75rem; // Better touch targets
+  }
+
+  .forgotLink,
+  .signUpBtn p {
+    padding: 0.5rem 0; // Larger touch area
+  }
+}
+
