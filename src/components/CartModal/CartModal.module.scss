@@ -15,17 +15,6 @@
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 300;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: 0;
-    width: 0;
-    height: 1px;
-    background-color: #d8a48f;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   &:hover {
     color: #d8a48f;
 
