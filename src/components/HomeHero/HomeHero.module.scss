@@ -22,25 +22,25 @@
       gap: 2rem;
       font-size: 4rem;
 
-      & > div {
-        font-weight: 500;
-      }
+      // & > div {
+      //   font-weight: 500;
+      // }
 
-      .firstImg {
-        position: absolute;
-        width: 200px;
-        height: 100px;
-        top: -15px;
-        left: 230px;
-      }
+      // .firstImg {
+      //   position: absolute;
+      //   width: 200px;
+      //   height: 100px;
+      //   top: -15px;
+      //   left: 230px;
+      // }
 
-      .secondImg {
-        position: absolute;
-        width: 150px;
-        rotate: 345deg;
-        top: 97px;
-        left: 528px;
-      }
+      // .secondImg {
+      //   position: absolute;
+      //   width: 150px;
+      //   rotate: 345deg;
+      //   top: 97px;
+      //   left: 528px;
+      // }
 
       .sloganBtn {
         margin-top: 4rem;
@@ -91,13 +91,10 @@
         }
       }
     }
-  }
-}
 
-@media (max-width: 1010px) {
-  .heroContainer {
-    .slogan {
-      scale: 0.7;
+    .sloganTextImg {
+      max-width: 80%;
+      width: 100%;
     }
   }
 }

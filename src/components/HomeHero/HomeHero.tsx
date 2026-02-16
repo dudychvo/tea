@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import firstImg from '../../assets/landscape-home-hero.jpg';
-import secondImg from '../../assets/tea-home-hero.png';
+// import firstImg from '../../assets/landscape-home-hero.jpg';
+// import secondImg from '../../assets/tea-home-hero.png';
+
+import imgHomeHero from '../../assets/img-home-hero.png';
 
 import styles from './HomeHero.module.scss';
 
@@ -10,7 +12,7 @@ export const HeroHero = () => {
     <>
       <div className={styles.heroContainer}>
         <div className={styles.slogan}>
-          <div className={styles.sloganText}>
+          {/* <div className={styles.sloganText}>
             <div>
               <img src={firstImg} alt='#' className={styles.firstImg} />
               Brew &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small
@@ -20,6 +22,18 @@ export const HeroHero = () => {
               <img src={secondImg} alt='#' className={styles.secondImg} />
               pauses, one cup &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at a time
             </div>
+            <button className={styles.sloganBtn}>
+              <Link to='/shop'>
+                <span>Explore Tea</span>
+              </Link>
+            </button>
+          </div> */}
+          <div className={styles.sloganText}>
+            <img
+              src={imgHomeHero}
+              alt='Slogan'
+              className={styles.sloganTextImg}
+            />
             <button className={styles.sloganBtn}>
               <Link to='/shop'>
                 <span>Explore Tea</span>
