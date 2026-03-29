@@ -19,6 +19,14 @@
     }
   }
 
+  .active {
+    color: #d8a48f;
+
+    h1 {
+      color: #d8a48f;
+    }
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -86,13 +94,5 @@
   .headerContainer ul li {
     font-size: 1.1rem;
     padding-bottom: 0;
-  }
-}
-
-.active {
-  color: #d8a48f;
-
-  h1 {
-    color: #d8a48f;
   }
 }
