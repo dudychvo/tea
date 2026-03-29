@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 // import firstImg from '../../assets/landscape-home-hero.jpg';
 // import secondImg from '../../assets/tea-home-hero.png';
 
-import imgHomeHero from '../../assets/img-home-hero.png';
-
 import styles from './HomeHero.module.scss';
 
 export const HeroHero = () => {
@@ -30,7 +28,7 @@ export const HeroHero = () => {
           </div> */}
           <div className={styles.sloganText}>
             <img
-              src={imgHomeHero}
+              src={'/assets/img-home-hero.png'}
               alt='Slogan'
               className={styles.sloganTextImg}
             />

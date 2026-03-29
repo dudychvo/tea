@@ -5,14 +5,11 @@ import { LoginForm } from './LoginForm/LoginForm';
 import { SignUpForm } from './SignUpForm/SignUpForm';
 import { ForgetPasswordForm } from './ForgetPasswordForm/ForgetPasswordForm';
 
-import authModal from '../../assets/auth-modal.jpg';
-import defaultAvatar from '../../assets/default-avatar.jpg';
-
 import styles from './AuthModal.module.scss';
 
 export const AuthModal = () => {
   const [form, setForm] = useState<'LOGIN' | 'SIGN_UP' | 'FORGET_PASSWORD'>(
-    'LOGIN'
+    'LOGIN',
   );
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -36,7 +33,7 @@ export const AuthModal = () => {
           }}
         >
           <div className={styles.avatarWrapper}>
-            <img src={defaultAvatar} alt='User avatar' />
+            <img src={'/assets/default-avatar.jpg'} alt='User avatar' />
             <div className={styles.statusDot}></div>
           </div>
           <div className={styles.userInfo}>
@@ -91,7 +88,7 @@ export const AuthModal = () => {
               )}
             </div>
             <div className={styles.imgSection}>
-              <img src={authModal} alt='#' />
+              <img src={'/assets/auth-modal.jpg'} alt='#' />
             </div>
           </DialogPanel>
         </div>
