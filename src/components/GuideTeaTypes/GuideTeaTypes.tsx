@@ -1,5 +1,6 @@
-import styles from './GuideTeaTypes.module.scss';
 import { useState } from 'react';
+
+import styles from './GuideTeaTypes.module.scss';
 
 export const GuideTeaTypes = () => {
   const teas = [
